@@ -1,4 +1,39 @@
+function playRound (playerSelection, computerSelection)
+
+{if (playerSelection == 'Rock' && computerSelection == 'Scissors'){'Congrats, you win. Rock beats scissors'}
+
+else if (playerSelection == 'Rock' && computerSelection == 'Paper') {
+   alert ('Sorry, you lose. paper beats rock')
+}
+
+else if (playerSelection == 'Scissors' && computerSelection == 'Rock') {
+   alert ('Sorry, you lose. Rock beats scissors.')
+}
+
+else if (playerSelection == 'Scissors' && computerSelection == 'Paper') { alert ('Congrats, you win. Scissors beats Rock.')
+}
+
+else if (playerSelection == 'Paper' && computerSelection == 'Rock') {
+   alert ('Congrats, you win. paper beats rock.')
+}
+
+else if (playerSelection == 'Paper' && computerSelection == 'Scissors') {
+ alert ('Sorry, you lose. Scissors beats paper.')
+}
+
+else if (playerSelection == computerSelection) {
+ alert ("It's a draw, try again.")
+}
+
+return playerSelection, computerSelection;
+
+}
 const playerSelection = window.prompt("What is your selection")
+
+function getComputerSelection (randomString){const computerSelection = choice[Math.floor(Math.random() * choice.length)];
+return computerSelection;}
+
+function game ()
 
 
 const choice = [
@@ -7,48 +42,7 @@ const choice = [
   "Scissors"
 ];
 
-const outcomeMessage = ['Congrats, you win!', 'Sorry, you lose.','Nobody wins. It\'s a draw']
+const computerSelection = getComputerSelection ()
 
-function getComputerSelection (randomString) {if (playerSelection = 'Rock' || 'Paper' || 'Scissors'){const computerSelection = choice[Math.floor(Math.random() * choice.length)];
-return computerSelection;}}
-
-
-function playRound (playerSelection, computerSelection)
-{
-
-    if (playerSelection == 'Rock' && computerSelection == 'Scissors'){outcomeMessage[1]}
-
-else if (playerSelection == 'Rock' && computerSelection == 'Rock') {
-    outcomeMessage[3]
-}
-else if (playerSelection == 'Rock' && computerSelection == 'Paper') {
-    outcomeMessage[2]
-}
-
-else if (playerSelection == 'Scissors' && computerSelection == 'Scissors') {
-    outcomeMessage[3]
-}
-
-else if (playerSelection == 'Scissors' && computerSelection == 'Rock') {
-    outcomeMessage[2]
-}
-
-else if (playerSelection == 'Scissors' && computerSelection == 'Paper') {
-    outcomeMessage[1]
-}
-
-else if (playerSelection == 'Paper' && computerSelection == 'Paper') {
-    outcomeMessage[3]
-}
-
-else if (playerSelection == 'Paper' && computerSelection == 'Rock') {
-    outcomeMessage[1]
-}
-
-else if (playerSelection == 'Paper' && computerSelection == 'Scissors') {
-    outcomeMessage[2]
-}
-
-}
-
-playRound (playerSelection, computerSelection)
+if (playerSelection ==  "Rock"||"Paper"||"Scissors" && computerSelection == "Rock"||"Paper"||"Scissors" ) 
+{playRound (playerSelection, computerSelection)}
