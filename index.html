@@ -12,24 +12,24 @@
 
 const playerSelection = window.prompt("What is your selection")
 
-
 const choice = [
   "Rock",
   "Paper",
   "Scissors"
 ];
 
-const outcomeMessage = ['Congrats, you win!', 'Sorry, you lose.','Nobody wins. It\'s a draw']
-
 const computerSelection = getComputerSelection ()
 
-function getComputerSelection (randomString) {if (playerSelection = 'Rock' || 'Paper' || 'Scissors')} {const computerSelection = choice[Math.floor(Math.random() * choice.length)];
+const outcomeMessage = ['Congrats, you win!', 'Sorry, you lose.','Nobody wins. It\'s a draw']
+
+function getComputerSelection (randomString){const computerSelection = choice[Math.floor(Math.random() * choice.length)];
 return computerSelection;}
 
+if (playerSelection ==  "Rock"||"Paper"||"Scissors" && computerSelection == "Rock"||"Paper"||"Scissors" ) {playRound (playerSelection, computerSelection)}
 
 function playRound (playerSelection, computerSelection)
-{
 
+{ 
     if (playerSelection == 'Rock' && computerSelection == 'Scissors'){outcomeMessage[1]}
 
 else if (playerSelection == 'Rock' && computerSelection == 'Rock') {
@@ -65,9 +65,6 @@ else if (playerSelection == 'Paper' && computerSelection == 'Scissors') {
 }
 
 }
-
-playRound (playerSelection, computerSelection)
-
     </script>
 </body>
 </html>

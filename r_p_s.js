@@ -9,10 +9,8 @@ const choice = [
 
 const outcomeMessage = ['Congrats, you win!', 'Sorry, you lose.','Nobody wins. It\'s a draw']
 
-const computerSelection = getComputerSelection ()
-
-function getComputerSelection (randomString) {if (playerSelection = 'Rock' || 'Paper' || 'Scissors')} {const computerSelection = choice[Math.floor(Math.random() * choice.length)];
-return computerSelection;}
+function getComputerSelection (randomString) {if (playerSelection = 'Rock' || 'Paper' || 'Scissors'){const computerSelection = choice[Math.floor(Math.random() * choice.length)];
+return computerSelection;}}
 
 
 function playRound (playerSelection, computerSelection)
@@ -23,7 +21,6 @@ function playRound (playerSelection, computerSelection)
 else if (playerSelection == 'Rock' && computerSelection == 'Rock') {
     outcomeMessage[3]
 }
-
 else if (playerSelection == 'Rock' && computerSelection == 'Paper') {
     outcomeMessage[2]
 }
