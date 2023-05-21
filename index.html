@@ -10,12 +10,15 @@
 <body>
     <script>
 
-      
-const playerSelection = window.prompt('What is your selection')
-
-
 let playerScore = 0
-let computerScore = 0
+  let computerScore = 0
+
+
+while (playerScore < 5 && computerScore < 5) {
+ 
+
+  const playerSelection = window.prompt('What is your selection')
+
 
 function score () {
   
@@ -81,14 +84,26 @@ else if (playerSelection == computerSelection) {console.log
 }
 }
 
-
 function getComputerSelection (randomString){const computerSelection = choice[Math.floor(Math.random() * choice.length)];
 return computerSelection;}
 
 score ()
 
+
 if (playerSelection ==  "Rock"||"Paper"||"Scissors" && computerSelection == "Rock"||"Paper"||"Scissors" ) {playRound (playerSelection, computerSelection)}
 
+}
+
+
+function game () {
+if (playerScore == 5) {
+  console.log ('Congrats. You Win!')
+}
+else if (computerScore == 5) { console.log ('Sorry, you lose!')
+
+}
+}
+game ()
     </script>
 
 </body>
