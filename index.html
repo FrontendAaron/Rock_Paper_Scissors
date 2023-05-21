@@ -10,43 +10,36 @@
 <body>
     <script>
 
-function playRound (playerSelection, computerSelection)
 
-{if (playerSelection == 'Rock' && computerSelection == 'Scissors'){'Congrats, you win. Rock beats scissors'}
 
-else if (playerSelection == 'Rock' && computerSelection == 'Paper') {
-   alert ('Sorry, you lose. paper beats rock')
+
+
+let playerScore = 0
+let computerScore = 0
+
+function score () {
+  
+  if (playerSelection == 'Rock' && computerSelection == 'Scissors') {
+  console.log (playerScore++)}
+  
+  else if (playerSelection == 'Rock' && computerSelection == 'Paper') {
+  console.log (computerScore++)}
+  
+  else if (playerSelection == 'Scissors' && computerSelection == 'Paper') {
+  console.log (playerScore++)}
+  
+  else if (playerSelection == 'Scissors' && computerSelection == 'Rock') {
+  console.log (computerScore++)}
+  else if (playerSelection == 'Paper' && computerSelection == 'Scissors') {
+  console.log (computerScore++)}
+  
+  else if (playerSelection == 'Paper' && computerSelection == 'Rock') {
+  console.log (playerScore++)}
+
+  else (
+  console.log(!(playerScore++ && computerScore++))
+  )
 }
-
-else if (playerSelection == 'Scissors' && computerSelection == 'Rock') {
-   alert ('Sorry, you lose. Rock beats scissors.')
-}
-
-else if (playerSelection == 'Scissors' && computerSelection == 'Paper') { alert ('Congrats, you win. Scissors beats Rock.')
-}
-
-else if (playerSelection == 'Paper' && computerSelection == 'Rock') {
-   alert ('Congrats, you win. paper beats rock.')
-}
-
-else if (playerSelection == 'Paper' && computerSelection == 'Scissors') {
- alert ('Sorry, you lose. Scissors beats paper.')
-}
-
-else if (playerSelection == computerSelection) {
- alert ("It's a draw, try again.")
-}
-
-return playerSelection, computerSelection;
-
-}
-const playerSelection = window.prompt("What is your selection")
-
-function getComputerSelection (randomString){const computerSelection = choice[Math.floor(Math.random() * choice.length)];
-return computerSelection;}
-
-function game ()
-
 
 const choice = [
   "Rock",
@@ -54,11 +47,51 @@ const choice = [
   "Scissors"
 ];
 
+
+const playerSelection = console.log (choice)
 const computerSelection = getComputerSelection ()
 
-if (playerSelection ==  "Rock"||"Paper"||"Scissors" && computerSelection == "Rock"||"Paper"||"Scissors" ) 
-{playRound (playerSelection, computerSelection)}
+function playRound (playerSelection, computerSelection){
+
+
+ if (playerSelection == 'Rock' && computerSelection == 'Scissors'){
+ console.log ('Congrats. Rock beats Scissorrs')}
+
+
+else if (playerSelection == 'Rock' && computerSelection == 'Paper') {
+  console.log ('Sorry, you lose. paper beats rock') 
+}
+
+else if (playerSelection == 'Scissors' && computerSelection == 'Rock') {
+  console.log  ('Sorry, you lose. Rock beats scissors. ') 
+}
+
+
+else if (playerSelection == 'Scissors' && computerSelection == 'Paper') { console.log  ('Congrats, you win. Scissors beats Rock.')
+}
+
+else if (playerSelection == 'Paper' && computerSelection == 'Rock') { console.log  ('Congrats, you win. Rock beats paper.' )
+}
+
+else if (playerSelection == 'Paper' && computerSelection == 'Scissors') {console.log  
+  ('Sorry, you lose. Scissors beats paper.')
+}
+
+else if (playerSelection == computerSelection) {console.log 
+  ("It's a draw")
+
+}
+}
+
+
+function getComputerSelection (randomString){const computerSelection = choice[Math.floor(Math.random() * choice.length)];
+return computerSelection;}
+
+score ()
+
+if (playerSelection ==  "Rock"||"Paper"||"Scissors" && computerSelection == "Rock"||"Paper"||"Scissors" ) {playRound (playerSelection, computerSelection)}
 
     </script>
+
 </body>
 </html>
