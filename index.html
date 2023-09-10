@@ -5,81 +5,103 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock,Paper, Scissors</title>
+    <link rel="stylesheet" type="text/css" href="rps.css" />
     <script type="text/javascript" src=""></script>
 </head>
 <body>
+  <div class="p">
+  <p class="pc">Make your choice!</p>
+</div>
+  <section class="container"> 
+     <div>
+       <button id="rock">Rock</button>
+       <img src="" alt="">
+     </div>
+    <div> 
+       <button id ="paper">Paper</button>
+       <img src="" alt="">
+    </div>
+    <div>
+      <button id ="scissors">Scissors</button>
+      <img src="" alt="">
+    </div>
+  </section>
     <script>
 
-let playerScore = 0
-  let computerScore = 0
 
+//playerSelection = alert('What is your choice')
+// when user clicks rock or paper or scissors, the playerSelection is assigned a value from the arry constant choice
 
-while (playerScore < 5 && computerScore < 5) {
- 
-
-  const playerSelection = window.prompt('What is your selection')
-
-
-function score () {
-  
-  if (playerSelection == 'Rock' && computerSelection == 'Scissors') {
-  console.log (playerScore++)}
-  
-  else if (playerSelection == 'Rock' && computerSelection == 'Paper') {
-  console.log (computerScore++)}
-  
-  else if (playerSelection == 'Scissors' && computerSelection == 'Paper') {
-  console.log (playerScore++)}
-  
-  else if (playerSelection == 'Scissors' && computerSelection == 'Rock') {
-  console.log (computerScore++)}
-  else if (playerSelection == 'Paper' && computerSelection == 'Scissors') {
-  console.log (computerScore++)}
-  
-  else if (playerSelection == 'Paper' && computerSelection == 'Rock') {
-  console.log (playerScore++)}
-
-  else (
-  console.log(!(playerScore++ && computerScore++))
-  )
-}
-
-const choice = [
-  "Rock",
-  "Paper",
-  "Scissors"
-];
-
-const computerSelection = getComputerSelection ()
 
 function playRound (playerSelection, computerSelection){
 
 
+  const rock = document.getElementById('rock');  
+const paper = document.getElementById('paper');
+const scissors = document.getElementById('scissors');
+
+rock.addEventListener('click',() =>{
+  playRound ('rock', computerSelection);});
+
+paper.addEventListener('click',()=>{
+  playRound('paper', computerSelection );});
+
+scissors.addEventListener('click',()=>{
+  playRound('scissors', computerSelection );});
+
+
+  const playerScore = 0
+const computerScore = 0
+
+const choice = [
+  "rock",
+  "paper",
+  "scissors"
+];
+
+
+    if (playerSelection === 'Rock' || 'Paper' || 'Scissors') {
+
+    playRound()
+
+    }
+
  if (playerSelection == 'Rock' && computerSelection == 'Scissors'){
- console.log ('Congrats. Rock beats Scissorrs')}
+ console.log ('Congrats. Rock beats Scissorrs');
+ playerScore++
+}
 
 
 else if (playerSelection == 'Rock' && computerSelection == 'Paper') {
-  console.log ('Sorry, you lose. paper beats rock') 
+  console.log ('Sorry, you lose. paper beats rock');
+computerScore++
 }
 
 else if (playerSelection == 'Scissors' && computerSelection == 'Rock') {
-  console.log  ('Sorry, you lose. Rock beats scissors. ') 
+  console.log  ('Sorry, you lose. Rock beats scissors. ');
+  computerScore++
 }
 
 
-else if (playerSelection == 'Scissors' && computerSelection == 'Paper') { console.log  ('Congrats, you win. Scissors beats Rock.')
+else if (playerSelection == 'Scissors' && computerSelection == 'Paper') { console.log  ('Congrats, you win. Scissors beats Rock.');
+playerScore++
 }
 
-else if (playerSelection == 'Paper' && computerSelection == 'Rock') { console.log  ('Congrats, you win. Rock beats paper.' )
+else if (playerSelection == 'Paper' && computerSelection == 'Rock') { console.log  ('Congrats, you win. Rock beats paper.');
+playerScore++
 }
 
 else if (playerSelection == 'Paper' && computerSelection == 'Scissors') {console.log  
-  ('Sorry, you lose. Scissors beats paper.')
+  ('Sorry, you lose. Scissors beats paper.');
+  computerScore++
 }
 
 else if (playerSelection == computerSelection) {console.log 
-  ("It's a draw")
+  ("It's a draw");
+  (!(playerScore++ && computerScore++))
+ 
+   //else if (!(playerSelection == 'Paper' && computerSelection == 'Rock') {
+  //console.log (playerScore++))}
 
 }
 }
@@ -87,23 +109,22 @@ else if (playerSelection == computerSelection) {console.log
 function getComputerSelection (randomString){const computerSelection = choice[Math.floor(Math.random() * choice.length)];
 return computerSelection;}
 
-score ()
 
 
-if (playerSelection ==  "Rock"||"Paper"||"Scissors" && computerSelection == "Rock"||"Paper"||"Scissors" ) {playRound (playerSelection, computerSelection)}
-
-}
+//if (playerSelection ==  "Rock"||"Paper"||"Scissors" && computerSelection == "Rock"||"Paper"||"Scissors" ) {playRound (playerSelection, computerSelection)}
 
 
-function game () {
-if (playerScore == 5) {
-  console.log ('Congrats. You Win!')
-}
-else if (computerScore == 5) { console.log ('Sorry, you lose!')
 
-}
-}
-game ()
+
+// function game () {
+// if (playerScore === 3) {
+//   console.log ('Congrats. You Win!')
+// }
+// else if (computerScore === 3) { console.log ('Sorry, you lose!')
+
+// }
+// }
+// game ()
     </script>
 
 </body>
