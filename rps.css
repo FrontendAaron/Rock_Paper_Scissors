@@ -1,59 +1,75 @@
 body {
-  color: white;
-
-}
-
-p {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 50px;
-}
+    color: black;
+       min-height: 100vh;
+       display: flex;
+       flex-direction: column;
+     ;
+   font-family: sans-serif;}
 
 
-section {
-    height: 500px;
+
+section 
+{min-height: 50vh;
+    color: black;
     display: flex;
-flex-direction: row;
-justify-content: space-around;
+flex-direction: row-reverse;
+justify-content: center;
 align-items: center;
 }
 
-.div1{
+.captitle {display: flex;}
+
+
+.buttons { justify-content: space-between;
+ min-height: 50vh;
     display: flex;
-    flex-direction: column;
+    display: flex ;
+    flex-direction: row;
 }
 
-.div3 {
-    display: flex;
-    flex-direction: column;
-}
-
-.div3{
-    display: flex;
-    flex-direction: column;
-}
-
-
-
-#rock {
-   
+#rock { 
     height: 100px;
     width: 100px;
     background-color: #bbb;
 
 }
 
-#paper { 
-    
-    height: 100px;
+#paper { height: 100px;
     width: 100px;
-    background-color: #bbb ;
- 
-}
+    background-color: #bbb ;}
 
 #scissors { 
     
     height: 100px;
     width: 100px;
     background-color: #bbb;
+}
+
+.score {
+display: flex;
+}
+
+/* .playerScore {
+
+    
 
 }
+.computerScore {
+
+} */
+
+#space {
+    size: 200px;
+} 
+
+#container {
+   
+    text-align: center;
+justify-content: center;
+    display: flex;
+}
+
+#score {
+
+} 
+

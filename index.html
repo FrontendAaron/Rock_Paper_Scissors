@@ -1,35 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock,Paper, Scissors</title>
-    <script type="text/javascript" src=""></script>
-    <link rel="stylesheet" href="rps.css">
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="rps.css">
+   <title>Rock, Paper, Scissors</title>
 </head>
 <body>
-
-  <section>
-    <div class="div1">
-    <button id="rock">rock</button>
-    <img src="" alt="">
-  </div>
-    <div class="div2">
-    <button id="paper">paper</button>
-    <img src="" alt="">
-    </div>
-   
-    <div class="div3">
-    <button src="rock.png" id="scissors">scissors</button>
-    <img src="" alt="">
-    </div>
+  <button id="playAgain"></button>
+  <div id="result"></div>
+<div id="container"> 
+  <div id="score"></div>
+</div>
+<section> 
+    <div class="captitle"> 
+     <strong class="title">Make Your Choice</strong>
 </section>
-    <script>
+<div class="buttons">
+<button id="rock">rock</button>
+<button id="paper">paper</button>
+<button id="scissors">scissors</button>
+</div>
+<script>
+
+const playAgain = document.getElementById('playAgain')
+const score = document.getElementById('score'); 
 
 let playerScore = 0
 let computerScore = 0
+let count = 0
 
+
+function updateScore() {
+ score.textContent = "Your score is: " + playerScore + " : " + "computer score is " + computerScore;
+}
 
 const rock = document.getElementById('rock');  
 const paper = document.getElementById('paper');
@@ -41,12 +46,11 @@ playRound('rock', getComputerSelection());});
     
 paper.addEventListener('click',()=>{
 
-playRound('paper', getComputerSelection() );});
+playRound('paper', getComputerSelection());});
 
 scissors.addEventListener('click',()=>{
 
 playRound('scissors', getComputerSelection() );});
-
 
 const computerSelection = getComputerSelection ()
 
@@ -57,52 +61,52 @@ return choices[Math.floor(Math.random() * choices.length)];
 
 function playRound (playerSelection, computerSelection) {
 
-
   if (playerSelection === 'rock' && computerSelection === 'scissors') {
+
     console.log ('Congrats. Rock beats Scissorrs')
-    return (++playerScore)
+     ++playerScore
   }
-   
 
   else if (playerSelection === 'rock' && computerSelection === 'paper') {
-    console.log ('Sorry, you lose. Paper beats rock')
-    return (++computerScore)
-}
 
+   console.log ('Sorry, you lose. Paper beats rock')
+     ++computerScore
+}
   else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-    console.log ('You win Sciccors beats paper. ')
-    return (++playerScore)
+   console.log ('You win Sciccors beats paper. ')
+    ++playerScore
    }
   
-  
   else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-    console.log('Sory you lose. Rock beats scissors.')
-    return (++computerScore)
+
+  console.log('Sory you lose. Rock beats scissors.')
+  ++computerScore
   }
 
   else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-    console.log('Sorry you lose. Scissors beats paper.')
-    return (++computerScore)
+  
+   console.log('Sorry you lose. Scissors beats paper.')
+   ++computerScore
   }
   
   else if (playerSelection === 'paper' && computerSelection === 'rock') {
-   console.log ("You win. Paper Beats rock. ")
-    return (++playerScore)
-
+  console.log ("You win. Paper Beats rock. ")
+  ++playerScore
 }
 
-else {console.log("It's a draw.")}
-
-
-}
-function game () {
-if (playerScore === 5) {
-  console.log ('Congrats. You Win!')
-}
-else { console.log ('Sorry, you lose!')
-}
+else {console.log("It's a draw.")
 }
 
+updateScore (); 
+}
+
+// function game () {
+// if (playerScore === 5) {
+//   console.log ('Congrats. You Win!')
+// }
+// else if (computerScore === 5) { console.log ('Sorry, you lose!')
+// }
+// }
 
 </script>
 </body>
