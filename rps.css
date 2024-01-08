@@ -7,6 +7,10 @@ body {
    font-family: sans-serif;}
 
 
+#section1  {
+    min-height: 50vh;
+} 
+
 
 section 
 {min-height: 50vh;
