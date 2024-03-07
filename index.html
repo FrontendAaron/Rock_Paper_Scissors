@@ -6,43 +6,32 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="rps.css">
    <title>Rock, Paper, Scissors</title>
+
 </head>
-<body>
-  <button>Display video</button>
+<body id="body">
 
-  <div class="hidden">
-    <video>
-      <source
-        src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm"
-        type="video/webm" />
-      <p>
-        Your browser doesn't support HTML video. Here is a
-        <a href="rabbit320.mp4">link to the video</a> instead.
-      </p>
-    </video>
-  </div>
-  
+<div id="score">Your score is: 0 : computer score is 0</div>
+
+<p id="result1"></p>
+<p id="result2"></p>
+<!-- Buttons for player's choices -->
+<button id="rock">Rock</button>
+<button id="paper">Paper</button>
+<button id="scissors">Scissors</button>
+<!-- Play again button -->
+
+<div id="playAgain" class="playAgain"></div>
 <script>
-
-
-const playAgain = document.getElementById('playAgain')
-playAgain.addEventListener ('click', () => {
-  
-  playerScore = 0;
-    computerScore = 0;
-});
-const score = document.getElementById('score'); 
-const playerWins = document.getElementById('playerWins')
-const computerWins = document.getElementById('computerWins')
-
 let playerScore = 0
 let computerScore = 0
-let count = 0
+//let count = 0
 
+let body = document.getElementById('body')
+
+const score = document.getElementById('score')
 function updateScore() {
 score.textContent = "Your score is: " + playerScore + " : " + "computer score is " + computerScore;
 }
-
 
                 const rock = document.getElementById('rock');  
                 const paper = document.getElementById('paper');
@@ -58,18 +47,17 @@ score.textContent = "Your score is: " + playerScore + " : " + "computer score is
 
                 scissors.addEventListener('click',()=>{
 
-                playRound('scissors', getComputerSelection() );});
-
-                const computerSelection = getComputerSelection ()
-
+                playRound('scissors', getComputerSelection() );})
+        
+              
+                
                 function  getComputerSelection () { 
                 const choices = ['rock','paper','scissors']
                 return choices[Math.floor(Math.random() * choices.length)];
                 }
+ 
 
                 function playRound (playerSelection, computerSelection) {
-
-
 
                   if (playerSelection === 'rock' && computerSelection === 'scissors') {
 
@@ -82,19 +70,20 @@ score.textContent = "Your score is: " + playerScore + " : " + "computer score is
                   console.log ('Sorry, you lose. Paper beats rock')
                     ++computerScore
                 }
+
                   else if (playerSelection === 'scissors' && computerSelection === 'paper') {
                   console.log ('You win Sciccors beats paper. ')
                     ++playerScore
                   }
                   
-                  else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-
-                  console.log('Sory you lose. Rock beats scissors.')
+                  else if (playerSelection === 'scissors' && computerSelection === 'rock') 
+                  {
+                  console.log('Sorry bro, you lose. Rock beats scissors.')
                   ++computerScore
                   }
 
-                  else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-                  
+                  else if (playerSelection === 'paper' && computerSelection === 'scissors') 
+                  {
                   console.log('Sorry you lose. Scissors beats paper.')
                   ++computerScore
                   }
@@ -108,17 +97,70 @@ score.textContent = "Your score is: " + playerScore + " : " + "computer score is
                 }
 
                 updateScore (); 
+               
+                if (playerScore === 5) {
+                  
+                  score.remove()
+    
+                  const result1 = document.getElementById('result1')
+     result1.textContent = "Congratulations, you have won!"
 
-                   results();
-                }
-            
-      
+      const playAgain = document.getElementById('playAgain') 
+      playAgain.textContent = 'Play Again?'
+      playAgain.textContent = 'Play Again?'
+         playAgain.style.backgroundColor = 'black';
+         playAgain.style.color = 'white'
+         playAgain.style.height = '40px'
+         playAgain.style.lineHeight = '40px'
+         playAgain.style.width = '100px'
+         playAgain.style.textAlign = 'center'
+      rock.remove();
+      paper.remove();
+      scissors.remove();
+  
+  }
                 
-                if (
-                  document.getElementById('playAgain').clicked == true)
-                  {
-                    alert("Button is clicked")
-                  }
+      else if (computerScore === 5) 
+        {
+
+          
+          
+          score.remove()
+          const result2 = document.getElementById('result2')
+          result2.textContent = "Sorry, you have lost!"
+     
+         const playAgain = document.getElementById('playAgain') 
+         playAgain.textContent = 'Play Again?'
+         playAgain.style.backgroundColor = 'black';
+         playAgain.style.color = 'white'
+         playAgain.style.height = '40px'
+         playAgain.style.lineHeight = '40px'
+         playAgain.style.width = '100px'
+         playAgain.style.textAlign = 'center'
+
+rock.remove();
+paper.remove();
+scissors.remove();
+
+}
+}
+            
+const playAgain = 
+document.getElementById('playAgain')
+playAgain.addEventListener('click', () => 
+          {
+playerScore = 0 
+computerScore = 0
+body.appendChild(rock);
+body.appendChild(paper);
+body.appendChild(scissors);
+body.appendChild(score);
+playAgain.remove();
+
+
+});
+
+ 
 
                 </script>
                 </body>
